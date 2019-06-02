@@ -199,3 +199,8 @@ body {
     margin-top: 0;
     padding-top: 15px;
 }
+
+@media handheld, only screen and (max-width: 1024px) 
+{
+    //Style goes here
+}
