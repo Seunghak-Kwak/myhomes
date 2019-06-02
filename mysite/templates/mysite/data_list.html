@@ -1,0 +1,403 @@
+{% load static %}
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--boot-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- static -->
+    <link href="{% static 'css/form.css' %}" rel="stylesheet">
+    <script src="{% static 'js/form.js' %}"></script>
+
+</head>
+<body>
+<div class="page-header">
+구해줘 홈즈 
+</div>
+
+    <!-- MultiStep Form -->
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <form id="msform" action="{% url 'submit_ok' %}" method="POST">
+            <!-- progressbar -->
+            <ul id="progressbar">
+                <li class="active">Home Details</li>
+                <li>Personal Details</li>
+                <li>My Details</li>
+            </ul>
+            <!-- fieldsets -->
+            <fieldset>
+                <h2 class="fs-title">Home Details</h2>
+                <h3 class="fs-subtitle">원하는 집의 조건을 정해주세요!</h3>
+                <label class="fs-question">어느 지역의 집을 찾으시나요?</label>
+                <input type="text" name="location" placeholder="(서울시 강남구 / 서울시 성동구 등)" required/>
+                <label class="fs-question">이사일은 언제신가요? (기존 세입자라면, 비워주는 날)</label>
+                <input type="date" name="moving_date"/>
+                <h3 class="fs-question">보증금, 전세금, 매매 가격</h3>
+                <div class="row">
+                <div class="col-md-5">
+                    <select class="form-control" name="deposit_min" style="font-size: 10pt;">
+                              <option value="전체" selected>전체</option><option value="0원">0원</option><option value="100만원">100만원</option><option value="500만원">500만원</option><option value="1천만원">1천만원</option><option value="2천만원">2천만원</option><option value="3천만원">3천만원</option><option value="4천만원">4천만원</option><option value="5천만원">5천만원</option><option value="6천만원">6천만원</option><option value="7천만원">7천만원</option><option value="8천만원">8천만원</option><option value="9천만원">9천만원</option><option value="1억원">1억원</option><option value="1억5천만원">1억5천만원</option><option value="2억원">2억원</option><option value="3억원">3억원</option>
+                </select>
+                </div>
+                <div class="col-md-2">
+                    <p style="font-size: 20px; font-weight: bold;">~</p>
+                </div>
+                <div class="col-md-5">
+                    <select class="form-control" name="deposit_max" style="font-size: 10pt;">
+                              <option value="전체" selected>전체</option><option value="0원">0원</option><option value="100만원">100만원</option><option value="500만원">500만원</option><option value="1천만원">1천만원</option><option value="2천만원">2천만원</option><option value="3천만원">3천만원</option><option value="4천만원">4천만원</option><option value="5천만원">5천만원</option><option value="6천만원">6천만원</option><option value="7천만원">7천만원</option><option value="8천만원">8천만원</option><option value="9천만원">9천만원</option><option value="1억원">1억원</option><option value="1억5천만원">1억5천만원</option><option value="2억원">2억원</option><option value="3억원 이상">3억원 이상</option>
+                </select>
+                </div>
+                </div>
+
+                <h3 class="fs-question" style="margin-bottom: 0;">월세</h3>
+                <div class="custom-control custom-checkbox" style="text-align: right; padding: 5px;">
+                  <input type="checkbox" class="custom-control-input" name="manage_check" value="관리비 포함" id="manage_check">
+                  <label class="custom-control-label" for="manage_check">관리비 포함</label>
+                </div>
+                <div class="row">
+                <div class="col-md-5">
+                    <select class="form-control" name="price_min" style="font-size: 10pt;">
+                              <option value="전체" selected>전체</option><option value='0원'>0원</option><option value="10만원">10만원</option><option value="20만원">20만원</option><option value="30만원">30만원</option><option value="40만원">40만원</option><option value="50만원">50만원</option><option value="60만원">60만원</option><option value="70만원">70만원</option><option value="80만원">80만원</option><option value="90만원">90만원</option><option value="100만원">100만원</option><option value="130만원">130만원</option><option value="160만원">160만원</option><option value="200만원">200만원</option><option value="250만원">250만원</option>
+                </select>
+                </div>
+                <div class="col-md-2">
+                    <p style="font-size: 20px; font-weight: bold;">~</p>
+                </div>
+                <div class="col-md-5">
+                    <select class="form-control" name="price_max" style="font-size: 10pt;">
+                              <option value="전체" selected>전체</option><option value='0원'>0원</option><option value="10만원">10만원</option><option value="20만원">20만원</option><option value="30만원">30만원</option><option value="40만원">40만원</option><option value="50만원">50만원</option><option value="60만원">60만원</option><option value="70만원">70만원</option><option value="80만원">80만원</option><option value="90만원">90만원</option><option value="100만원">100만원</option><option value="130만원">130만원</option><option value="160만원">160만원</option><option value="200만원">200만원</option><option value="250만원 이상">250만원 이상</option>
+                </select>
+                </div>
+                </div>
+                <hr class="divider my-4">
+
+                <h3 class="fs-question">거래 유형</h3>     
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name=deal_type value="단기 임대" id="dealCheck1">
+                  <label class="custom-control-label" for="dealCheck1">단기 임대</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name=deal_type value="월세" id="dealCheck2">
+                  <label class="custom-control-label" for="dealCheck2">월세</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name=deal_type value="전세" id="dealCheck3">
+                  <label class="custom-control-label" for="dealCheck3">전세</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name=deal_type value="반전세" id="dealCheck4">
+                  <label class="custom-control-label" for="dealCheck4">반전세</label>
+                </div>
+                </div>
+                <div class="col-md-12">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name=deal_type value="매매" id="dealCheck5">
+                  <label class="custom-control-label" for="dealCheck5">매매</label>
+                </div>
+                </div>
+                <br><br>
+                
+
+                <h3 class="fs-question">건물 형태</h3> 
+
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="residence_type" value="빌라/주택" id="Check1">
+                  <label class="custom-control-label" for="Check1">빌라/주택</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="residence_type" value="오피스텔" id="Check2">
+                  <label class="custom-control-label" for="Check2">오피스텔</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="residence_type" value="아파트" id="Check3">
+                  <label class="custom-control-label" for="Check3">아파트</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="residence_type" value="상가/사무실" id="Check4">
+                  <label class="custom-control-label" for="Check4">상가/사무실</label>
+                </div>
+                </div>
+                <br><br>
+
+                <h3 class="fs-question">방 구조</h3>   
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="room" value="분리형 원룸" id="roomCheck1">
+                  <label class="custom-control-label" for="roomCheck1">분리형 원룸</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="room" value="오픈형 원룸" id="roomCheck2">
+                  <label class="custom-control-label" for="roomCheck2">오픈형 원룸</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="room" value="투룸" id="roomCheck3">
+                  <label class="custom-control-label" for="roomCheck3">투룸</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="room" value="쓰리룸 이상" id="roomCheck4">
+                  <label class="custom-control-label" for="roomCheck4">쓰리룸 이상</label>
+                </div>
+                </div>
+                <br><br>
+
+                <h3 class="fs-question">층수</h3>   
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="floor" value="반지층" id="floorCheck1">
+                  <label class="custom-control-label" for="floorCheck1">반지층</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="floor" value="1층" id="floorCheck2">
+                  <label class="custom-control-label" for="floorCheck2">1층</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="floor" value="2층" id="floorCheck3">
+                  <label class="custom-control-label" for="floorCheck3">2층</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="floor" value="3층" id="floorCheck4">
+                  <label class="custom-control-label" for="floorCheck4">3층</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="floor" value="4층 이상" id="floorCheck5">
+                  <label class="custom-control-label" for="floorCheck5">4층 이상</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="floor" value="옥탑" id="floorCheck6">
+                  <label class="custom-control-label" for="floorCheck6">옥탑</label>
+                </div>
+                </div>
+                <br><br><br>
+
+                <h3 class="fs-question">평수</h3>   
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="size" value="5평 이하" id="sizeCheck1">
+                  <label class="custom-control-label" for="sizeCheck1">5평 이하</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="size" value="6평 ~ 10평" id="sizeCheck2">
+                  <label class="custom-control-label" for="sizeCheck2">6평 ~ 10평</label>
+                </div>
+                </div>
+                <div class="col-md-12">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="size" value="11평 이상" id="sizeCheck3">
+                  <label class="custom-control-label" for="sizeCheck3">11평 이상</label>
+                </div>
+                </div>
+                <br><br>
+
+                <h3 class="fs-question">기타 옵션</h3>   
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" id="optionCheck1" name="option" value="신축">
+                  <label class="custom-control-label" for="optionCheck1">신축</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" id="optionCheck2" name="option" value="풀옵션">
+                  <label class="custom-control-label" for="optionCheck2">풀옵션</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" id="optionCheck3" name="option" value="주차가능">
+                  <label class="custom-control-label" for="optionCheck3">주차가능</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" id="optionCheck4" name="option" value="엘리베이터">
+                  <label class="custom-control-label" for="optionCheck4">엘리베이터</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;" >
+                  <input type="checkbox" class="custom-control-input" id="optionCheck5" name="option" value="반려동물">
+                  <label class="custom-control-label" for="optionCheck5">반려동물</label>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;" >
+                  <input type="checkbox" class="custom-control-input" id="optionCheck6" name="option" value="전세자금대출">
+                  <label class="custom-control-label" for="optionCheck6">전세자금대출</label>
+                </div>
+                </div>
+                
+
+                <input type="button" name="next" class="next action-button" value="Next"/>
+            </fieldset>
+            <fieldset>
+                <h2 class="fs-title">Personal Details</h2>
+                <h3 class="fs-subtitle">구해줘 홈즈에게 더 알려주세요.<br>당신에게 딱 맞는 집을 찾아드릴게요!</h3>
+
+                <label class="fs-question">닉네임을 정해주세요!(필수)</label>  
+                <input type="text" name="nickname" placeholder="호떡"/>
+
+                <label class="fs-question">연락처를 알려주세요. 안심번호로 전달됩니다.(필수)</label>  
+                <input type="text" name="contact" placeholder="010-0000-0000"/>
+
+
+                <label class="fs-question">나이를 알려주세요.(선택)</label>  
+                <div>
+                <select class="form-control" name="age" style="font-size: 10pt;">
+                              <option value="" selected>선택</option><option value="10대">10대</option><option value="20대">20대</option><option value="30대~40대">30~40대</option><option value="50~60대">50~60대</option>
+                </select>
+                </div>
+
+                <label class="fs-question">성별을 알려주세요.(선택)</label>  
+                <div>
+                <select class="form-control" name="sex" style="font-size: 10pt;">
+                              <option value="" selected>선택</option><option value="남자">남자</option><option value="여자">여자</option>
+                </select>
+                </div>
+
+                <label class="fs-question">하시는 일을 알려주세요.(선택)</label>  
+                <input type="text" name="job" placeholder="(학생, 직장인 등)"/>
+
+
+
+                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                <input type="button" name="next" class="next action-button" value="Next"/>
+            </fieldset>
+            <fieldset>
+                <h2 class="fs-title">My Details</h2>
+                <h3 class="fs-subtitle">마지막으로 원하는 집을 자유롭게 표현해 주세요!<br>(우선순위, 추가사항 등)</h3>
+                <textarea class="form-control" rows="5" id="detail" name="detail" required></textarea>
+                
+                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+
+            </fieldset>
+        </form>
+
+    </div>
+</div>
+<!-- /.MultiStep Form -->
+
+
+
+<script>
+    //jQuery time
+var current_fs, next_fs, previous_fs; //fieldsets
+var left, opacity, scale; //fieldset properties which we will animate
+var animating; //flag to prevent quick multi-click glitches
+
+$(".next").click(function(){
+  if(animating) return false;
+  animating = true;
+  
+  current_fs = $(this).parent();
+  next_fs = $(this).parent().next();
+  
+  //activate next step on progressbar using the index of next_fs
+  $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+  
+  //show the next fieldset
+  next_fs.show(); 
+  //hide the current fieldset with style
+  current_fs.animate({opacity: 0}, {
+    step: function(now, mx) {
+      //as the opacity of current_fs reduces to 0 - stored in "now"
+      //1. scale current_fs down to 80%
+      scale = 1 - (1 - now) * 0.2;
+      //2. bring next_fs from the right(50%)
+      left = (now * 50)+"%";
+      //3. increase opacity of next_fs to 1 as it moves in
+      opacity = 1 - now;
+      current_fs.css({
+        'transform': 'scale('+scale+')',
+        'position': 'absolute'
+      });
+      next_fs.css({'left': left, 'opacity': opacity});
+    }, 
+    duration: 800, 
+    complete: function(){
+      current_fs.hide();
+      animating = false;
+    }, 
+    //this comes from the custom easing plugin
+    easing: 'easeInOutBack'
+  });
+});
+
+$(".previous").click(function(){
+  if(animating) return false;
+  animating = true;
+  
+  current_fs = $(this).parent();
+  previous_fs = $(this).parent().prev();
+  
+  //de-activate current step on progressbar
+  $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+  
+  //show the previous fieldset
+  previous_fs.show(); 
+  //hide the current fieldset with style
+  current_fs.animate({opacity: 0}, {
+    step: function(now, mx) {
+      //as the opacity of current_fs reduces to 0 - stored in "now"
+      //1. scale previous_fs from 80% to 100%
+      scale = 0.8 + (1 - now) * 0.2;
+      //2. take current_fs to the right(50%) - from 0%
+      left = ((1-now) * 50)+"%";
+      //3. increase opacity of previous_fs to 1 as it moves in
+      opacity = 1 - now;
+      current_fs.css({'left': left});
+      previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+    }, 
+    duration: 800, 
+    complete: function(){
+      current_fs.hide();
+      animating = false;
+    }, 
+    //this comes from the custom easing plugin
+    easing: 'easeInOutBack'
+  });
+});
+
+// $(".submit").click(function(){
+//   return false;
+// })
+</script>
+</body>
+</html>
