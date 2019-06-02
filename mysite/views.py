@@ -6,7 +6,17 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 def data_list(request):
 
-    return render(request, 'mysite/data_list.html', {})
+    range = ["0원","100만원","500만원","1천만원","2천만원",
+     "3천만원","4천만원","5천만원",
+     "6천만원","7천만원","8천만원",
+     "9천만원","1억원","1억5천만원",
+     "2억원","2억 5천만원","3억원"]
+
+    context = {
+        'range': range
+    }
+
+    return render(request, 'mysite/data_list.html', context=context)
 
 @csrf_exempt
 def submit_ok(request):
