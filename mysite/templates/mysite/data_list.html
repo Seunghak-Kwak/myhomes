@@ -22,7 +22,7 @@
 
     <!-- MultiStep Form -->
 <div class="row">
-    <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12">
+    <div class="col-md-6 col-md-offset-3">
         <form id="msform" action="{% url 'submit_ok' %}" method="POST">
             <!-- progressbar -->
             <ul id="progressbar">
@@ -32,7 +32,6 @@
             </ul>
             <!-- fieldsets -->
             <fieldset>
-                <div id = "fs_1" display="none"></div>
                 <h2 class="fs-title">Home Details</h2>
                 <h3 class="fs-subtitle">원하는 집의 조건을 정해주세요!</h3>
                 <label class="fs-question">어느 지역의 집을 찾으시나요?</label>
@@ -268,7 +267,6 @@
                 <input type="button" name="next" class="next action-button" id="next1" value="Next"/>
             </fieldset>
             <fieldset>
-                <div id = "fs_2" display="none"></div>
                 <h2 class="fs-title">Personal Details</h2>
                 <h3 class="fs-subtitle">구해줘 홈즈에게 더 알려주세요.<br>당신에게 딱 맞는 집을 찾아드릴게요!</h3>
 
@@ -302,7 +300,6 @@
                 <input type="button" name="next" class="next action-button" value="Next"/>
             </fieldset>
             <fieldset>
-                <div id = "fs_3" display="none"></div>
                 <h2 class="fs-title">My Details</h2>
                 <h3 class="fs-subtitle">마지막으로 원하는 집을 자유롭게 표현해 주세요!<br>(우선순위, 추가사항 등)</h3>
                 <textarea class="form-control" rows="5" id="detail" name="detail"></textarea>
