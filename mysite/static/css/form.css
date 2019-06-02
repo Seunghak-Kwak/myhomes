@@ -11,7 +11,6 @@
 html {
     height: 100%;
     background: #6441A5; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #6441A5, #2a0845); /* Chrome 10-25, Safari 5.1-6 */
 }
 
 body {
@@ -31,7 +30,7 @@ body {
     border: 0 none;
     border-radius: 0px;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-    padding: 20px 25px;
+    padding: 20px 30px;
     box-sizing: border-box;
     width: 96%;
     margin: 0 2%;
