@@ -40,15 +40,15 @@
                 <input type="date" name="moving_date"/>
                 <h3 class="fs-question">보증금, 전세금, 매매 가격</h3>
                 <div class="row">
-                <div class="col-md-5">
+                <div class="col-xs-5">
                     <select class="form-control" name="deposit_min" style="font-size: 10pt;">
                               <option value="전체" selected>전체</option><option value="0원">0원</option><option value="100만원">100만원</option><option value="500만원">500만원</option><option value="1천만원">1천만원</option><option value="2천만원">2천만원</option><option value="3천만원">3천만원</option><option value="4천만원">4천만원</option><option value="5천만원">5천만원</option><option value="6천만원">6천만원</option><option value="7천만원">7천만원</option><option value="8천만원">8천만원</option><option value="9천만원">9천만원</option><option value="1억원">1억원</option><option value="1억5천만원">1억5천만원</option><option value="2억원">2억원</option><option value="3억원">3억원</option>
                 </select>
                 </div>
-                <div class="col-md-2">
+                <div class="col-xs-2">
                     <p style="font-size: 20px; font-weight: bold;">~</p>
                 </div>
-                <div class="col-md-5">
+                <div class="col-xs-5">
                     <select class="form-control" name="deposit_max" style="font-size: 10pt;">
                               <option value="전체" selected>전체</option><option value="0원">0원</option><option value="100만원">100만원</option><option value="500만원">500만원</option><option value="1천만원">1천만원</option><option value="2천만원">2천만원</option><option value="3천만원">3천만원</option><option value="4천만원">4천만원</option><option value="5천만원">5천만원</option><option value="6천만원">6천만원</option><option value="7천만원">7천만원</option><option value="8천만원">8천만원</option><option value="9천만원">9천만원</option><option value="1억원">1억원</option><option value="1억5천만원">1억5천만원</option><option value="2억원">2억원</option><option value="3억원 이상">3억원 이상</option>
                 </select>
@@ -56,20 +56,20 @@
                 </div>
 
                 <h3 class="fs-question" style="margin-bottom: 0;">월세</h3>
-                <div class="custom-control custom-checkbox" style="text-align: right; padding: 5px;">
+                <div class="custom-control custom-checkbox" style="text-align: right; padding:0px 5px 5px;">
                   <input type="checkbox" class="custom-control-input" name="manage_check" value="관리비 포함" id="manage_check">
-                  <label class="custom-control-label" for="manage_check">관리비 포함</label>
+                  <label class="custom-control-label check_font" for="manage_check">관리비 포함</label>
                 </div>
                 <div class="row">
-                <div class="col-md-5">
+                <div class="col-xs-5">
                     <select class="form-control" name="price_min" style="font-size: 10pt;">
                               <option value="전체" selected>전체</option><option value='0원'>0원</option><option value="10만원">10만원</option><option value="20만원">20만원</option><option value="30만원">30만원</option><option value="40만원">40만원</option><option value="50만원">50만원</option><option value="60만원">60만원</option><option value="70만원">70만원</option><option value="80만원">80만원</option><option value="90만원">90만원</option><option value="100만원">100만원</option><option value="130만원">130만원</option><option value="160만원">160만원</option><option value="200만원">200만원</option><option value="250만원">250만원</option>
                 </select>
                 </div>
-                <div class="col-md-2">
+                <div class="col-xs-2">
                     <p style="font-size: 20px; font-weight: bold;">~</p>
                 </div>
-                <div class="col-md-5">
+                <div class="col-xs-5">
                     <select class="form-control" name="price_max" style="font-size: 10pt;">
                               <option value="전체" selected>전체</option><option value='0원'>0원</option><option value="10만원">10만원</option><option value="20만원">20만원</option><option value="30만원">30만원</option><option value="40만원">40만원</option><option value="50만원">50만원</option><option value="60만원">60만원</option><option value="70만원">70만원</option><option value="80만원">80만원</option><option value="90만원">90만원</option><option value="100만원">100만원</option><option value="130만원">130만원</option><option value="160만원">160만원</option><option value="200만원">200만원</option><option value="250만원 이상">250만원 이상</option>
                 </select>
@@ -78,192 +78,191 @@
                 <hr class="divider my-4">
 
                 <h3 class="fs-question">거래 유형</h3>     
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name=deal_type value="단기 임대" id="dealCheck1">
-                  <label class="custom-control-label" for="dealCheck1">단기 임대</label>
+                  <label class="custom-control-label check_font" for="dealCheck1">단기 임대</label>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name=deal_type value="월세" id="dealCheck2">
-                  <label class="custom-control-label" for="dealCheck2">월세</label>
+                  <label class="custom-control-label check_font" for="dealCheck2">월세</label>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name=deal_type value="전세" id="dealCheck3">
-                  <label class="custom-control-label" for="dealCheck3">전세</label>
+                  <label class="custom-control-label check_font" for="dealCheck3">전세</label>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name=deal_type value="반전세" id="dealCheck4">
-                  <label class="custom-control-label" for="dealCheck4">반전세</label>
+                  <label class="custom-control-label check_font" for="dealCheck4">반전세</label>
                 </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-xs-12">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name=deal_type value="매매" id="dealCheck5">
-                  <label class="custom-control-label" for="dealCheck5">매매</label>
+                  <label class="custom-control-label check_font" for="dealCheck5">매매</label>
                 </div>
                 </div>
-                <br><br>
+                <br><br><br>
                 
 
                 <h3 class="fs-question">건물 형태</h3> 
 
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name="residence_type" value="빌라/주택" id="Check1">
-                  <label class="custom-control-label" for="Check1">빌라/주택</label>
+                  <label class="custom-control-label check_font" for="Check1">빌라/주택</label>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name="residence_type" value="오피스텔" id="Check2">
-                  <label class="custom-control-label" for="Check2">오피스텔</label>
+                  <label class="custom-control-label check_font" for="Check2">오피스텔</label>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name="residence_type" value="아파트" id="Check3">
-                  <label class="custom-control-label" for="Check3">아파트</label>
+                  <label class="custom-control-label check_font" for="Check3">아파트</label>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name="residence_type" value="상가/사무실" id="Check4">
-                  <label class="custom-control-label" for="Check4">상가/사무실</label>
+                  <label class="custom-control-label check_font" for="Check4">상가/사무실</label>
                 </div>
                 </div>
-                <br><br>
-
+                <br><br><br>
                 <h3 class="fs-question">방 구조</h3>   
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name="room" value="분리형 원룸" id="roomCheck1">
-                  <label class="custom-control-label" for="roomCheck1">분리형 원룸</label>
+                  <label class="custom-control-label check_font" for="roomCheck1">분리형 원룸</label>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name="room" value="오픈형 원룸" id="roomCheck2">
-                  <label class="custom-control-label" for="roomCheck2">오픈형 원룸</label>
+                  <label class="custom-control-label check_font" for="roomCheck2">오픈형 원룸</label>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name="room" value="투룸" id="roomCheck3">
-                  <label class="custom-control-label" for="roomCheck3">투룸</label>
+                  <label class="custom-control-label check_font" for="roomCheck3">투룸</label>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name="room" value="쓰리룸 이상" id="roomCheck4">
-                  <label class="custom-control-label" for="roomCheck4">쓰리룸 이상</label>
-                </div>
-                </div>
-                <br><br>
-
-                <h3 class="fs-question">층수</h3>   
-                <div class="col-md-6">
-                <div class="custom-control custom-checkbox" style="text-align: left;">
-                  <input type="checkbox" class="custom-control-input" name="floor" value="반지층" id="floorCheck1">
-                  <label class="custom-control-label" for="floorCheck1">반지층</label>
-                </div>
-                </div>
-                <div class="col-md-6">
-                <div class="custom-control custom-checkbox" style="text-align: left;">
-                  <input type="checkbox" class="custom-control-input" name="floor" value="1층" id="floorCheck2">
-                  <label class="custom-control-label" for="floorCheck2">1층</label>
-                </div>
-                </div>
-                <div class="col-md-6">
-                <div class="custom-control custom-checkbox" style="text-align: left;">
-                  <input type="checkbox" class="custom-control-input" name="floor" value="2층" id="floorCheck3">
-                  <label class="custom-control-label" for="floorCheck3">2층</label>
-                </div>
-                </div>
-                <div class="col-md-6">
-                <div class="custom-control custom-checkbox" style="text-align: left;">
-                  <input type="checkbox" class="custom-control-input" name="floor" value="3층" id="floorCheck4">
-                  <label class="custom-control-label" for="floorCheck4">3층</label>
-                </div>
-                </div>
-                <div class="col-md-6">
-                <div class="custom-control custom-checkbox" style="text-align: left;">
-                  <input type="checkbox" class="custom-control-input" name="floor" value="4층 이상" id="floorCheck5">
-                  <label class="custom-control-label" for="floorCheck5">4층 이상</label>
-                </div>
-                </div>
-                <div class="col-md-6">
-                <div class="custom-control custom-checkbox" style="text-align: left;">
-                  <input type="checkbox" class="custom-control-input" name="floor" value="옥탑" id="floorCheck6">
-                  <label class="custom-control-label" for="floorCheck6">옥탑</label>
+                  <label class="custom-control-label check_font" for="roomCheck4">쓰리룸 이상</label>
                 </div>
                 </div>
                 <br><br><br>
 
+                <h3 class="fs-question">층수</h3>   
+                <div class="col-xs-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="floor" value="반지층" id="floorCheck1">
+                  <label class="custom-control-label check_font" for="floorCheck1">반지층</label>
+                </div>
+                </div>
+                <div class="col-xs-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="floor" value="1층" id="floorCheck2">
+                  <label class="custom-control-label check_font" for="floorCheck2">1층</label>
+                </div>
+                </div>
+                <div class="col-xs-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="floor" value="2층" id="floorCheck3">
+                  <label class="custom-control-label check_font" for="floorCheck3">2층</label>
+                </div>
+                </div>
+                <div class="col-xs-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="floor" value="3층" id="floorCheck4">
+                  <label class="custom-control-label check_font" for="floorCheck4">3층</label>
+                </div>
+                </div>
+                <div class="col-xs-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="floor" value="4층 이상" id="floorCheck5">
+                  <label class="custom-control-label check_font" for="floorCheck5">4층 이상</label>
+                </div>
+                </div>
+                <div class="col-xs-6">
+                <div class="custom-control custom-checkbox" style="text-align: left;">
+                  <input type="checkbox" class="custom-control-input" name="floor" value="옥탑" id="floorCheck6">
+                  <label class="custom-control-label check_font" for="floorCheck6">옥탑</label>
+                </div>
+                </div>
+                <br><br><br><br>
+
                 <h3 class="fs-question">평수</h3>   
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name="size" value="5평 이하" id="sizeCheck1">
-                  <label class="custom-control-label" for="sizeCheck1">5평 이하</label>
+                  <label class="custom-control-label check_font" for="sizeCheck1">5평 이하</label>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name="size" value="6평 ~ 10평" id="sizeCheck2">
-                  <label class="custom-control-label" for="sizeCheck2">6평 ~ 10평</label>
+                  <label class="custom-control-label check_font" for="sizeCheck2">6평 ~ 10평</label>
                 </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-xs-12">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" name="size" value="11평 이상" id="sizeCheck3">
-                  <label class="custom-control-label" for="sizeCheck3">11평 이상</label>
+                  <label class="custom-control-label check_font" for="sizeCheck3">11평 이상</label>
                 </div>
                 </div>
-                <br><br>
+                <br><br><br>
 
                 <h3 class="fs-question">기타 옵션</h3>   
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" id="optionCheck1" name="option" value="신축">
-                  <label class="custom-control-label" for="optionCheck1">신축</label>
+                  <label class="custom-control-label check_font" for="optionCheck1">신축</label>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" id="optionCheck2" name="option" value="풀옵션">
-                  <label class="custom-control-label" for="optionCheck2">풀옵션</label>
+                  <label class="custom-control-label check_font" for="optionCheck2">풀옵션</label>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" id="optionCheck3" name="option" value="주차가능">
-                  <label class="custom-control-label" for="optionCheck3">주차가능</label>
+                  <label class="custom-control-label check_font" for="optionCheck3">주차가능</label>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
                   <input type="checkbox" class="custom-control-input" id="optionCheck4" name="option" value="엘리베이터">
-                  <label class="custom-control-label" for="optionCheck4">엘리베이터</label>
+                  <label class="custom-control-label check_font" for="optionCheck4">엘리베이터</label>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;" >
                   <input type="checkbox" class="custom-control-input" id="optionCheck5" name="option" value="반려동물">
-                  <label class="custom-control-label" for="optionCheck5">반려동물</label>
+                  <label class="custom-control-label check_font" for="optionCheck5">반려동물</label>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;" >
                   <input type="checkbox" class="custom-control-input" id="optionCheck6" name="option" value="전세자금대출">
-                  <label class="custom-control-label" for="optionCheck6">전세자금대출</label>
+                  <label class="custom-control-label check_font" for="optionCheck6">전세자금대출</label>
                 </div>
                 </div>
-                
+                <br><br><br><br>
 
                 <input type="button" name="next" class="next action-button" value="Next"/>
             </fieldset>
