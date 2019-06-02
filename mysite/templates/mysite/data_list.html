@@ -32,10 +32,11 @@
             </ul>
             <!-- fieldsets -->
             <fieldset>
+                <div id = "fs_1" display="none"></div>
                 <h2 class="fs-title">Home Details</h2>
                 <h3 class="fs-subtitle">원하는 집의 조건을 정해주세요!</h3>
                 <label class="fs-question">어느 지역의 집을 찾으시나요?</label>
-                <input type="text" name="location" placeholder="(서울시 강남구 / 서울시 성동구 등)" required/>
+                <input type="text" name="location" id = "loc" placeholder="(서울시 강남구 / 서울시 성동구 등)"/>
                 <label class="fs-question">이사일은 언제신가요? (기존 세입자라면, 비워주는 날)</label>
                 <input type="date" name="moving_date"/>
                 <h3 class="fs-question">보증금, 전세금, 매매 가격</h3>
@@ -57,7 +58,7 @@
 
                 <h3 class="fs-question" style="margin-bottom: 0;">월세</h3>
                 <div class="custom-control custom-checkbox" style="text-align: right; padding:0px 5px 5px;">
-                  <input type="checkbox" class="custom-control-input" name="manage_check" value="관리비 포함" id="manage_check">
+                  <input type="checkbox" class="custom-control-input" name="manage_check" value="관리비 포함" id="manage_check" checked>
                   <label class="custom-control-label check_font" for="manage_check">관리비 포함</label>
                 </div>
                 <div class="row">
@@ -66,7 +67,7 @@
                               <option value="전체" selected>전체</option><option value='0원'>0원</option><option value="10만원">10만원</option><option value="20만원">20만원</option><option value="30만원">30만원</option><option value="40만원">40만원</option><option value="50만원">50만원</option><option value="60만원">60만원</option><option value="70만원">70만원</option><option value="80만원">80만원</option><option value="90만원">90만원</option><option value="100만원">100만원</option><option value="130만원">130만원</option><option value="160만원">160만원</option><option value="200만원">200만원</option><option value="250만원">250만원</option>
                 </select>
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-1" style="margin-right: 20px;">
                     <p style="font-size: 20px; font-weight: bold;">~</p>
                 </div>
                 <div class="col-xs-5">
@@ -80,7 +81,7 @@
                 <h3 class="fs-question">거래 유형</h3>     
                 <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
-                  <input type="checkbox" class="custom-control-input" name=deal_type value="단기 임대" id="dealCheck1">
+                  <input type="checkbox" class="custom-control-input" name=deal_type value="단기 임대" id="dealCheck1" checked>
                   <label class="custom-control-label check_font" for="dealCheck1">단기 임대</label>
                 </div>
                 </div>
@@ -115,7 +116,7 @@
 
                 <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
-                  <input type="checkbox" class="custom-control-input" name="residence_type" value="빌라/주택" id="Check1">
+                  <input type="checkbox" class="custom-control-input" name="residence_type" value="빌라/주택" id="Check1" checked>
                   <label class="custom-control-label check_font" for="Check1">빌라/주택</label>
                 </div>
                 </div>
@@ -141,7 +142,7 @@
                 <h3 class="fs-question">방 구조</h3>   
                 <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
-                  <input type="checkbox" class="custom-control-input" name="room" value="분리형 원룸" id="roomCheck1">
+                  <input type="checkbox" class="custom-control-input" name="room" value="분리형 원룸" id="roomCheck1" checked>
                   <label class="custom-control-label check_font" for="roomCheck1">분리형 원룸</label>
                 </div>
                 </div>
@@ -168,7 +169,7 @@
                 <h3 class="fs-question">층수</h3>   
                 <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
-                  <input type="checkbox" class="custom-control-input" name="floor" value="반지층" id="floorCheck1">
+                  <input type="checkbox" class="custom-control-input" name="floor" value="반지층" id="floorCheck1" checked>
                   <label class="custom-control-label check_font" for="floorCheck1">반지층</label>
                 </div>
                 </div>
@@ -207,7 +208,7 @@
                 <h3 class="fs-question">평수</h3>   
                 <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
-                  <input type="checkbox" class="custom-control-input" name="size" value="5평 이하" id="sizeCheck1">
+                  <input type="checkbox" class="custom-control-input" name="size" value="5평 이하" id="sizeCheck1" checked>
                   <label class="custom-control-label check_font" for="sizeCheck1">5평 이하</label>
                 </div>
                 </div>
@@ -228,7 +229,7 @@
                 <h3 class="fs-question">기타 옵션</h3>   
                 <div class="col-xs-6">
                 <div class="custom-control custom-checkbox" style="text-align: left;">
-                  <input type="checkbox" class="custom-control-input" id="optionCheck1" name="option" value="신축">
+                  <input type="checkbox" class="custom-control-input" id="optionCheck1" name="option" value="신축" checked>
                   <label class="custom-control-label check_font" for="optionCheck1">신축</label>
                 </div>
                 </div>
@@ -264,17 +265,18 @@
                 </div>
                 <br><br><br><br>
 
-                <input type="button" name="next" class="next action-button" value="Next"/>
+                <input type="button" name="next" class="next action-button" id="next1" value="Next"/>
             </fieldset>
             <fieldset>
+                <div id = "fs_2" display="none"></div>
                 <h2 class="fs-title">Personal Details</h2>
                 <h3 class="fs-subtitle">구해줘 홈즈에게 더 알려주세요.<br>당신에게 딱 맞는 집을 찾아드릴게요!</h3>
 
                 <label class="fs-question">닉네임을 정해주세요!(필수)</label>  
-                <input type="text" name="nickname" placeholder="호떡"/>
+                <input type="text" name="nickname" id="nickname" placeholder="호떡"/>
 
                 <label class="fs-question">연락처를 알려주세요. 안심번호로 전달됩니다.(필수)</label>  
-                <input type="text" name="contact" placeholder="010-0000-0000"/>
+                <input type="text" name="contact" id="contact" placeholder="010-0000-0000"/>
 
 
                 <label class="fs-question">나이를 알려주세요.(선택)</label>  
@@ -300,12 +302,13 @@
                 <input type="button" name="next" class="next action-button" value="Next"/>
             </fieldset>
             <fieldset>
+                <div id = "fs_3" display="none"></div>
                 <h2 class="fs-title">My Details</h2>
                 <h3 class="fs-subtitle">마지막으로 원하는 집을 자유롭게 표현해 주세요!<br>(우선순위, 추가사항 등)</h3>
-                <textarea class="form-control" rows="5" id="detail" name="detail" required></textarea>
+                <textarea class="form-control" rows="5" id="detail" name="detail"></textarea>
                 
                 <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+                <input type="submit" name="_submit" class="submit action-button" value="Submit"/>
 
             </fieldset>
         </form>
@@ -323,41 +326,41 @@ var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
 $(".next").click(function(){
-  if(animating) return false;
-  animating = true;
-  
-  current_fs = $(this).parent();
-  next_fs = $(this).parent().next();
-  
-  //activate next step on progressbar using the index of next_fs
-  $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-  
-  //show the next fieldset
-  next_fs.show(); 
-  //hide the current fieldset with style
-  current_fs.animate({opacity: 0}, {
-    step: function(now, mx) {
-      //as the opacity of current_fs reduces to 0 - stored in "now"
-      //1. scale current_fs down to 80%
-      scale = 1 - (1 - now) * 0.2;
-      //2. bring next_fs from the right(50%)
-      left = (now * 50)+"%";
-      //3. increase opacity of next_fs to 1 as it moves in
-      opacity = 1 - now;
-      current_fs.css({
-        'transform': 'scale('+scale+')',
-        'position': 'absolute'
-      });
-      next_fs.css({'left': left, 'opacity': opacity});
-    }, 
-    duration: 800, 
-    complete: function(){
-      current_fs.hide();
-      animating = false;
-    }, 
-    //this comes from the custom easing plugin
-    easing: 'easeInOutBack'
-  });
+      if(animating) return false;
+      animating = true;
+      
+      current_fs = $(this).parent();
+      next_fs = $(this).parent().next();
+      
+      //activate next step on progressbar using the index of next_fs
+      $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+      
+      //show the next fieldset
+      next_fs.show(); 
+      //hide the current fieldset with style
+      current_fs.animate({opacity: 0}, {
+        step: function(now, mx) {
+          //as the opacity of current_fs reduces to 0 - stored in "now"
+          //1. scale current_fs down to 80%
+          scale = 1 - (1 - now) * 0.2;
+          //2. bring next_fs from the right(50%)
+          left = (now * 50)+"%";
+          //3. increase opacity of next_fs to 1 as it moves in
+          opacity = 1 - now;
+          current_fs.css({
+            'transform': 'scale('+scale+')',
+            'position': 'absolute'
+          });
+          next_fs.css({'left': left, 'opacity': opacity});
+        }, 
+        duration: 800, 
+        complete: function(){
+          current_fs.hide();
+          animating = false;
+        }, 
+        //this comes from the custom easing plugin
+        easing: 'easeInOutBack'
+      });                      
 });
 
 $(".previous").click(function(){
@@ -395,9 +398,32 @@ $(".previous").click(function(){
   });
 });
 
-// $(".submit").click(function(){
-//   return false;
-// })
+</script>
+
+<script>
+var loc = document.getElementById('loc');
+var nickname = document.getElementById('nickname');
+var contact = document.getElementById('contact');
+var form = document.getElementById('msform');
+
+$(".submit").click(function(e){
+    e.preventDefault();
+
+    if (loc.value == '') {
+        window.alert("원하시는 지역을 입력해주세요!");
+    }
+    else if (nickname.value == '') {
+        window.alert("닉네임을 꼭 입력해주세요!");
+    }
+    else if (contact.value == '') {
+        window.alert("연락처를 꼭 입력해주세요!");
+    }
+    else{
+        $("#msform")[0].submit();
+    }
+
+});
+
 </script>
 </body>
 </html>

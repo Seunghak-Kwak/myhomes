@@ -3,7 +3,6 @@ from .models import Data
 from django.views.decorators.csrf import csrf_exempt
 
 
-
 # Create your views here.
 def data_list(request):
 
@@ -14,8 +13,9 @@ def submit_ok(request):
     if request.method == 'POST': # If the form has been submitted...
 
         items = dict(request.POST)
-        nickname = "".join(items['nickname'])
 
+        nickname = "".join(items['nickname'])
+  
         Data(
         nickname = nickname,
         age = "".join(items['age']),
@@ -25,7 +25,7 @@ def submit_ok(request):
 
         location = "".join(items['location']),
         moving_date = "".join(items['moving_date']),
-        deal_type = '|'.join(items['deal_type']),
+        deal_type ='|'.join(items['deal_type']),
         residence_type = '|'.join(items['residence_type']),
         room_type = '|'.join(items['room']),
         roomfloor = '|'.join(items['floor']),
@@ -36,8 +36,6 @@ def submit_ok(request):
         price = "".join(items['price_min']) + "~"+ "".join(items['price_max']),
         manage_price = '월세에 포함',
         detail = "".join(items['detail'])).save()
-
-        print(items)
 
         context = {
             'nickname': nickname
