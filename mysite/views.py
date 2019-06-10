@@ -24,8 +24,12 @@ def submit_ok(request):
 
         items = dict(request.POST)
 
+
         nickname = "".join(items['nickname'])
-  
+        manage_price = ''.join(items['manage_check'])
+        if len(items['manage_check']) == 2:
+            manage_price = '월세에 관리비 포함'
+
         Data(
         nickname = nickname,
         age = "".join(items['age']),
@@ -44,12 +48,11 @@ def submit_ok(request):
 
         deposit = "".join(items['deposit_min']) + "~"+ "".join(items['deposit_max']),
         price = "".join(items['price_min']) + "~"+ "".join(items['price_max']),
-        manage_price = '월세에 포함',
+        manage_price = manage_price,
         detail = "".join(items['detail'])).save()
 
         context = {
             'nickname': nickname
         }
-
 
     return render(request, 'mysite/submit_ok.html', context=context)

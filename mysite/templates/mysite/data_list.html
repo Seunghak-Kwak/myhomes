@@ -89,6 +89,7 @@
                 <h3 class="fs-question" style="margin-bottom: 0;">월세</h3>
                 <div class="custom-control custom-checkbox" style="text-align: right; padding:0px 5px 5px;">
                   <input type="checkbox" class="custom-control-input" name="manage_check" value="관리비 포함" id="manage_check" checked>
+                  <input type="hidden" name="manage_check" value="월세에 관리비 미포함">
                   <label class="custom-control-label check_font" for="manage_check">관리비 포함</label>
                 </div>
                 <div class="row">
@@ -340,7 +341,7 @@
 
 
                 <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                <input type="button" name="next" class="next action-button" value="Next"/>
+                <input type="button" name="next" class="next action-button" id="next2" value="Next"/>
             </fieldset>
             <fieldset>
                 <h2 class="fs-title">My Details</h2>
@@ -348,7 +349,6 @@
                 <textarea class="form-control" rows="5" id="detail" name="detail"></textarea>
 
 
-                
                 <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
                 <input type="submit" name="_submit" class="submit action-button" value="Submit"/>
 
@@ -361,48 +361,98 @@
 
 
 
-<script>
+<script>//next and previous
     //jQuery time
 var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
-$(".next").click(function(){
-      if(animating) return false;
-      animating = true;
+var loc = document.getElementById('loc');
+var nickname = document.getElementById('nickname');
+var contact = document.getElementById('contact');
+
+$(".next").click(function(){ 
+
+    //validation start
+    var next_id = $(this).attr('id');
+    if (next_id == 'next1') {
+        if (loc.value == '') {
+            window.alert("원하시는 지역을 입력해주세요!");
+            return;
+        }
+
+        else if (checkbox_val('deal_type') == 0){
+            window.alert("거래유형을 체크해주세요.");
+            return;
+        }
+        else if (checkbox_val('residence_type') == 0){
+            window.alert("건물형태를 체크해주세요.");
+            return;
+        }
+        else if (checkbox_val('room') == 0){
+            window.alert("방 구조를 체크해주세요.");
+            return;
+        }
+        else if (checkbox_val('floor') == 0){
+            window.alert("층수를 체크해주세요.");
+            return;
+        }
+        else if (checkbox_val('size') == 0){
+            window.alert("평수를 체크해주세요.");
+            return;
+        }
+        else if (checkbox_val('option') == 0){
+            window.alert("기타옵션을 체크해주세요.");
+            return;
+        }
+    }
+    else if (next_id == 'next2') {
+        if (nickname.value == '') {
+            window.alert("닉네임을 꼭 입력해주세요!");
+            return;
+
+        }
+        else if (contact.value == '') {
+            window.alert("연락처를 꼭 입력해주세요!");
+            return;
+        }
+    }
+    //validation end
+
+    if(animating) return false;
+    animating = true;
       
-      current_fs = $(this).parent();
-      next_fs = $(this).parent().next();
+    current_fs = $(this).parent();
+    next_fs = $(this).parent().next();
       
-      //activate next step on progressbar using the index of next_fs
-      $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-      
-      //show the next fieldset
-      next_fs.show(); 
-      //hide the current fieldset with style
-      current_fs.animate({opacity: 0}, {
-        step: function(now, mx) {
-          //as the opacity of current_fs reduces to 0 - stored in "now"
-          //1. scale current_fs down to 80%
-          scale = 1 - (1 - now) * 0.2;
-          //2. bring next_fs from the right(50%)
-          left = (now * 50)+"%";
-          //3. increase opacity of next_fs to 1 as it moves in
-          opacity = 1 - now;
-          current_fs.css({
-            'transform': 'scale('+scale+')',
-            'position': 'absolute'
-          });
-          next_fs.css({'left': left, 'opacity': opacity});
-        }, 
-        duration: 800, 
-        complete: function(){
-          current_fs.hide();
-          animating = false;
-        }, 
-        //this comes from the custom easing plugin
-        easing: 'easeInOutBack'
-      });                      
+    //activate next step on progressbar using the index of next_fs
+    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+    //show the next fieldset
+    next_fs.show(); 
+    //hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+    step: function(now, mx) {
+      //as the opacity of current_fs reduces to 0 - stored in "now"
+      //1. scale current_fs down to 80%
+      scale = 1 - (1 - now) * 0.2;
+      //2. bring next_fs from the right(50%)
+      left = (now * 50)+"%";
+      //3. increase opacity of next_fs to 1 as it moves in
+      opacity = 1 - now;
+      current_fs.css({
+        'transform': 'scale('+scale+')',
+        'position': 'absolute'
+      });
+      next_fs.css({'left': left, 'opacity': opacity});
+    }, 
+    duration: 800, 
+    complete: function(){
+      current_fs.hide();
+      animating = false;
+    }, 
+    //this comes from the custom easing plugin
+    easing: 'easeInOutBack'
+    });                   
 });
 
 $(".previous").click(function(){
@@ -442,41 +492,15 @@ $(".previous").click(function(){
 
 </script>
 
-<script>
-var loc = document.getElementById('loc');
-var nickname = document.getElementById('nickname');
-var contact = document.getElementById('contact');
+<script> //form submit
 var form = document.getElementById('msform');
+var details = document.getElementById('detail');
 
 $(".submit").click(function(e){
     e.preventDefault();
 
-    if (loc.value == '') {
-        window.alert("원하시는 지역을 입력해주세요!");
-    }
-    else if (nickname.value == '') {
-        window.alert("닉네임을 꼭 입력해주세요!");
-    }
-    else if (contact.value == '') {
-        window.alert("연락처를 꼭 입력해주세요!");
-    }
-    else if (checkbox_val('deal_type') == 0){
-        window.alert("거래유형을 체크해주세요.");
-    }
-    else if (checkbox_val('residence_type') == 0){
-        window.alert("건물형태를 체크해주세요.");
-    }
-    else if (checkbox_val('room') == 0){
-        window.alert("방 구조를 체크해주세요.");
-    }
-    else if (checkbox_val('floor') == 0){
-        window.alert("층수를 체크해주세요.");
-    }
-    else if (checkbox_val('size') == 0){
-        window.alert("평수를 체크해주세요.");
-    }
-    else if (checkbox_val('option') == 0){
-        window.alert("기타옵션을 체크해주세요.");
+    if (details.value == '') {
+        window.alert("본인만의 디테일을 입력해주세요!");
     }
     else{
         $("#msform")[0].submit();
@@ -593,5 +617,6 @@ function checkbox_val(a)
     else return 0;
 }
 </script>
+
 </body>
 </html>
