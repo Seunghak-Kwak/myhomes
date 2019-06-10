@@ -47,7 +47,7 @@ def submit_ok(request):
         option = '|'.join(items['option']),
 
         deposit = "".join(items['deposit_min']) + "~"+ "".join(items['deposit_max']),
-        price = "".join(items['price_min']) + "~"+ "".join(items['price_max']),
+        monthly_price = "".join(items['price_min']) + "~"+ "".join(items['price_max']),
         manage_price = manage_price,
         detail = "".join(items['detail'])).save()
 
