@@ -24,6 +24,13 @@ def data_list(request):
 
     return render(request, 'mysite/data_list.html', context=context)
 
+def home(request):
+
+    context = {}
+
+    return render(request, 'mysite/home.html', context=context)
+    
+
 @csrf_exempt
 def submit_ok(request):
     if request.method == 'POST': # If the form has been submitted...
