@@ -227,7 +227,7 @@
         <div class="title">
           <h2>Home Details
             <br>
-            <small>원하는 집의 조건을 정해주세요!</small>
+            <small>원하는 조건을 말해주세요!</small>
           </h2>
  
         </div>
@@ -620,7 +620,7 @@
         <div class="title">
           <h2>Personal Details
             <br>
-            <small>구해줘 홈즈에게 더 알려 주세요!</small>
+            <small>홈즈에게 더 알려 주세요!</small>
           </h2>
         </div>
 
@@ -786,14 +786,14 @@
         <div class="title">
           <h2>My Details
             <br>
-            <small>구해줘 홈즈에게 더 알려 주세요!</small>
+            <small>이런 집에 살고 싶어요!</small>
           </h2>
         </div>
 
         <div class="cd-section">
           <div class="row">
             <div class="col-md-12"> <!--디테일-->
-              <h4 class="title" style="margin-bottom: 0">마지막으로 원하는 집을 자유롭게 표현해주세요!
+              <h4 class="title" style="margin-bottom: 0">원하는 집을 자유롭게 표현해주세요!
                 <br><span style="font-weight: bold;">(우선순위, 추가사항 등)</span>
               </h4>
               <div class="form-group">
@@ -995,7 +995,8 @@
     //   {behavior: 'smooth'});
     $("html, body").animate({
         scrollTop: $('#focusing_page').offset().top
-      }, 1000);
+        //scrollTop: $('.main').offset().top
+      }, 700);
     //... and fix the Previous/Next buttons:
     if (n == 0) {
       document.getElementById("prevBtn").style.display = "none";
@@ -1027,6 +1028,7 @@
       // {behavior: 'smooth'});
       $("html, body").animate({
         scrollTop: $('#focusing_page').offset().top
+        //scrollTop: $('.main').offset().top
       }, 1000);
   
 
