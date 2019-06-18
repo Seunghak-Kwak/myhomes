@@ -207,9 +207,9 @@
             <div class="col-md-12"> <!-- 이사일 -->
               <h4 class="title" style="margin-bottom: 0">이사일은 언제신가요?</h4>
               <div class="col-md-6">
-              <div class="form-group">
+              <div class="form-group" id="mydatetimepicker">
                 <label class="label-control">(기존 세입자라면, 비워주는 날)</label>
-                <input type="text" name="moving_date" class="form-control datetimepicker" value="">
+                <input type="text" name="moving_date" class="form-control datetimepicker" value="" readonly="true">
               </div>
               </div>
             </div> <!--이사일 -->
@@ -638,7 +638,7 @@
             <div class="col-md-12"> <!--연락처-->
               <h4 class="title" style="margin-bottom: 0">연락처를 알려주세요. 안심번호로 전달됩니다. (필수)</h4>
               <div class="form-group">
-                <label for="contact_input" class="bmd-label-floating">ex) 010-1234-5678</label>
+                <label for="contact_input" class="bmd-label-floating" style="color:gray;">ex) 010-1234-5678</label>
                 <input type="text" class="form-control" id="contact_input" name="contact" minlength="13" required>
                 <div class="invalid-feedback"> 연락처를 올바르게 입력해주세요.</div>
               </div>
@@ -1029,7 +1029,7 @@
       $("html, body").animate({
         scrollTop: $('#focusing_page').offset().top
         //scrollTop: $('.main').offset().top
-      }, 1000);
+      }, 700);
   
 
       return false;
@@ -1168,6 +1168,12 @@
 
       // Sliders Init
       materialKit.initSliders();
+
+      $('#mydatetimepicker').datetimepicker({
+        format: 'DD/MM/YYYY',
+        ignoreReadonly: true,
+        allowInputToggle: true
+      });
     });
 
 
