@@ -207,6 +207,7 @@
             <div class="col-md-12"> <!-- 이사일 -->
               <h4 class="title" style="margin-bottom: 0">이사일은 언제신가요?</h4>
               <!-- <div class="col-md-6"> -->
+    
               <div class="form-group" id="mydatetimepicker">
                 <label class="label-control">(기존 세입자라면, 비워주는 날)</label>
                 <input type="text" name="moving_date" class="form-control datetimepicker" style="background-color:white;" value="" readonly="true">
@@ -1173,7 +1174,29 @@
         format: 'DD/MM/YYYY',
         ignoreReadonly: true,
         allowInputToggle: true,
+
+        icons: {
+        time: "fa fa-clock-o",
+        date: "fa fa-calendar",
+        up: "fa fa-chevron-up",
+        down: "fa fa-chevron-down",
+        previous: 'fa fa-chevron-left',
+        next: 'fa fa-chevron-right',
+        today: 'fa fa-screenshot',
+        clear: 'fa fa-trash',
+        close: 'fa fa-remove'
+        },
+
+        widgetPositioning:{
+        horizontal: 'right',
+        vertical: 'auto'
+        }
+
+
+
       });
+    
+
     });
 
 
