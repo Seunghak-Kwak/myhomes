@@ -206,12 +206,12 @@
 
             <div class="col-md-12"> <!-- 이사일 -->
               <h4 class="title" style="margin-bottom: 0">이사일은 언제신가요?</h4>
-              <div class="col-md-6">
+              <!-- <div class="col-md-6"> -->
               <div class="form-group" id="mydatetimepicker">
                 <label class="label-control">(기존 세입자라면, 비워주는 날)</label>
-                <input type="text" name="moving_date" class="form-control datetimepicker" value="" readonly="true">
+                <input type="text" name="moving_date" class="form-control datetimepicker" style="background-color:white;" value="" readonly="true">
               </div>
-              </div>
+              <!-- </div> -->
             </div> <!--이사일 -->
 
           </div> <!--row end-->
@@ -243,8 +243,8 @@
                               <option value="전체" selected>전체</option><option value="0원">0원</option><option value="100만원">100만원</option><option value="500만원">500만원</option><option value="1천만원">1천만원</option><option value="2천만원">2천만원</option><option value="3천만원">3천만원</option><option value="4천만원">4천만원</option><option value="5천만원">5천만원</option><option value="6천만원">6천만원</option><option value="7천만원">7천만원</option><option value="8천만원">8천만원</option><option value="9천만원">9천만원</option><option value="1억원">1억원</option><option value="1억5천만원">1억5천만원</option><option value="2억원">2억원</option><option value="2억 5천만원">2억5천만원</option><option value="3억원">3억원</option>
                   </select>
                 </div>
-                <div class="col-md-5 col-2">
-                  <p style="font-size: 20px; font-weight: bold;">~</p>
+                <div class="col-md-2 col-2">
+                  <p style="font-size: 20px; font-weight: bold; line-height: 2;">~</p>
                 </div>
                 <div class="col-md-5 col-5">
                   <select class="form-control" name="deposit_max" style="font-size: 10pt; width:100%;">
@@ -279,7 +279,7 @@
                 </select>
                 </div>
                 <div class="col-md-2 col-2">
-                  <p style="font-size: 20px; font-weight: bold;">~</p>
+                  <p style="font-size: 20px; font-weight: bold; line-height: 2;">~</p>
                 </div>
                 <div class="col-md-5 col-5">
                 <select class="form-control" name="price_max" style="font-size: 10pt;">
@@ -1172,7 +1172,7 @@
       $('#mydatetimepicker').datetimepicker({
         format: 'DD/MM/YYYY',
         ignoreReadonly: true,
-        allowInputToggle: true
+        allowInputToggle: true,
       });
     });
 
