@@ -2,6 +2,12 @@ from django.shortcuts import render
 from .models import Data
 from django.views.decorators.csrf import csrf_exempt
 
+def index(request):
+
+    context = {}
+
+    return render(request, 'mysite/index.html', context=context)
+
 
 # Create your views here.
 def data_list(request):
